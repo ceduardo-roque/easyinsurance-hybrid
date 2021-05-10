@@ -1,0 +1,54 @@
+entity Corretor {
+	nomeCorretor String required,
+    usuario String required,
+    dataNascimento LocalDate, 
+    foto ImageBlob,
+    telefone String
+}
+
+entity Cliente {
+	nomeCliente String required,
+    usuario String required,
+    dataNascimento LocalDate, 
+    foto ImageBlob,
+    telefone String
+}
+
+entity Seguradora {
+	nomeSeguradora String required
+}
+
+entity Proposta {
+	numeroProposta String required,
+	dataProposta LocalDate required, 
+    valorProposta BigDecimal required,
+    status Status required
+}
+
+entity Plano {
+	nomePlano String required
+}
+
+relationship OneToMany {
+	Proposta{cliente(nomeCliente)} to Cliente{proposta(numeroProposta)},
+    Proposta{corretor(nomeCorretor)} to Corretor{corretor(nomeCorretor)},
+    Proposta{plano(nomePlano)} to Plano{proposta(numeroProposta)},
+    Proposta{seguradora(nomeSeguradora)} to Seguradora{proposta(numeroProposta)}
+}
+
+enum Status {
+    ATIVO, CANCELADO, PENDENTE
+}
+
+// Set pagination options
+paginate Proposta with infinite-scroll
+paginate Cliente, Corretor, Seguradora, Plano with pagination
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
