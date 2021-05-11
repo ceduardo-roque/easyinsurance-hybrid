@@ -1,0 +1,66 @@
+{
+  "name": "Proposta",
+  "fields": [
+    {
+      "fieldName": "numeroProposta",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "dataProposta",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "valorProposta",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Status",
+      "fieldValues": "ATIVO,CANCELADO,PENDENTE",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "cliente",
+      "otherEntityRelationshipName": "proposta",
+      "relationshipName": "cliente",
+      "otherEntityField": "nomeCliente"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "corretor",
+      "otherEntityRelationshipName": "corretor",
+      "relationshipName": "corretor",
+      "otherEntityField": "nomeCorretor"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "plano",
+      "otherEntityRelationshipName": "proposta",
+      "relationshipName": "plano",
+      "otherEntityField": "nomePlano"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "seguradora",
+      "otherEntityRelationshipName": "proposta",
+      "relationshipName": "seguradora",
+      "otherEntityField": "nomeSeguradora"
+    }
+  ],
+  "entityTableName": "proposta",
+  "dto": "no",
+  "pagination": "infinite-scroll",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210511004201"
+}

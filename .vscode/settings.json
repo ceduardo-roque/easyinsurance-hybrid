@@ -1,0 +1,14 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "database-fiapayrton.cluster-cypdggaufcvl.us-east-1.rds.amazonaws.com",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "sql",
+            "database": "dbeasyinsurance",
+            "username": "postgres",
+            "password": "J0fWITAJFdyyNr0St4Uu"
+        }
+    ]
+}

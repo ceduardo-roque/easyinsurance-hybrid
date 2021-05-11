@@ -1,0 +1,29 @@
+{
+  "name": "Plano",
+  "fields": [
+    {
+      "fieldName": "nomePlano",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "proposta",
+      "otherEntityRelationshipName": "plano",
+      "relationshipName": "proposta",
+      "otherEntityField": "numeroProposta"
+    }
+  ],
+  "entityTableName": "plano",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210511004202"
+}

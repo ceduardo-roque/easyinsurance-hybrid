@@ -1,0 +1,29 @@
+{
+  "name": "Seguradora",
+  "fields": [
+    {
+      "fieldName": "nomeSeguradora",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "proposta",
+      "otherEntityRelationshipName": "seguradora",
+      "relationshipName": "proposta",
+      "otherEntityField": "numeroProposta"
+    }
+  ],
+  "entityTableName": "seguradora",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210511004200"
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity Proposta.
+    -->
+    <changeSet id="20210511004201-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="cliente_id"
+                                 baseTableName="proposta"
+                                 constraintName="fk_proposta__cliente_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cliente"/>
+
+        <addForeignKeyConstraint baseColumnNames="corretor_id"
+                                 baseTableName="proposta"
+                                 constraintName="fk_proposta__corretor_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="corretor"/>
+
+        <addForeignKeyConstraint baseColumnNames="plano_id"
+                                 baseTableName="proposta"
+                                 constraintName="fk_proposta__plano_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="plano"/>
+
+        <addForeignKeyConstraint baseColumnNames="seguradora_id"
+                                 baseTableName="proposta"
+                                 constraintName="fk_proposta__seguradora_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="seguradora"/>
+    </changeSet>
+</databaseChangeLog>
