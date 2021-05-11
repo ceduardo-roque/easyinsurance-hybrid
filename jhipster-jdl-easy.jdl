@@ -29,7 +29,7 @@ entity Plano {
 	nomePlano String required
 }
 
-relationship OneToMany {
+relationship ManyToOne {
 	Proposta{cliente(nomeCliente)} to Cliente{proposta(numeroProposta)},
     Proposta{corretor(nomeCorretor)} to Corretor{corretor(nomeCorretor)},
     Proposta{plano(nomePlano)} to Plano{proposta(numeroProposta)},
