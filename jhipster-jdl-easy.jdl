@@ -36,6 +36,8 @@ relationship ManyToOne {
     Proposta{seguradora(nomeSeguradora)} to Seguradora{proposta(numeroProposta)}
 }
 
+
+
 enum Status {
     ATIVO, CANCELADO, PENDENTE
 }
